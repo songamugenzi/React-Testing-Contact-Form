@@ -18,11 +18,11 @@ test('ContactForm returns new "user" object', () => {
     fireEvent.change(emailInput, { target: { value: 'songa-mugenzi@lambdastudents.com' }});
     fireEvent.change(messageInput, { target: { value: 'All tests are passing Yayyyy!' }});
 
-    // expect(screen.getByDisplayValue(/songa/i)).toBeInTheDocument();
-    // expect(screen.getByDisplayValue(/mugenzi/i)).toBeInTheDocument();
-    // expect(screen.getByDisplayValue(/songa-mugenzi@lambdastudents.com/i)).toBeInTheDocument();
-    // expect(screen.getByDisplayValue(/All tests are passing Yayyyy!/i)).toBeInTheDocument();
-
+    expect(firstNameInput).toBeInTheDocument();
+    expect(lastNameInput).toBeInTheDocument();
+    expect(emailInput).toBeInTheDocument();
+    expect(messageInput).toBeInTheDocument();
+    
     const submitButton = screen.getByTestId(/submitButton/i);
     fireEvent.click(submitButton);
     expect(submitButton).toBeInTheDocument();
